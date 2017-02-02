@@ -21,7 +21,7 @@ public class BookTypeDAOImpl implements BookTypeDAO {
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
-        session.getSessionFactory().getCurrentSession().createQuery("delete from booktype").executeUpdate();
+        session.getSessionFactory().getCurrentSession().createSQLQuery("delete from booktype").executeUpdate();
         isDeleted=true;
         return isDeleted;
     }

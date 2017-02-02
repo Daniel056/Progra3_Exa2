@@ -21,7 +21,7 @@ public class BookDAOImpl implements BookDAO {
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
-        session.getSessionFactory().getCurrentSession().createQuery("delete from book").executeUpdate();
+        session.getSessionFactory().getCurrentSession().createSQLQuery("delete from book").executeUpdate();
         isDeleted=true;
         return isDeleted;
     }
@@ -43,5 +43,20 @@ public class BookDAOImpl implements BookDAO {
 
         return bookList;
     }
+
+    @Override
+    public float totalPriceAll() {
+        float totalPrice=0;
+        List<Book> bookList= new ArrayList<>();
+        
+        bookList= session.createCriteria(Book.class).list();
+        
+        for(Book book: bookList){
+            totalPrice= totalPrice + book.getPrice();
+        }
+        
+        return totalPrice;
+    }
+    
     
 }

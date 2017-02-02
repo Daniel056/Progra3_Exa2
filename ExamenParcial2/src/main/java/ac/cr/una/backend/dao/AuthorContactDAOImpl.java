@@ -21,7 +21,7 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
-        session.getSessionFactory().getCurrentSession().createQuery("delete from authorcontact").executeUpdate();
+        session.getSessionFactory().getCurrentSession().createSQLQuery("delete from authorcontact").executeUpdate();
         isDeleted=true;
         return isDeleted;
     }
