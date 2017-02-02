@@ -5,12 +5,10 @@
  */
 package ac.cr.una.backend.webservice;
 
-import ac.cr.una.backend.dao.AuthorContactDAOImpl;
+
 import ac.cr.una.backend.dao.BookDAO;
 import ac.cr.una.backend.dao.BookDAOImpl;
-import ac.cr.una.backend.model.AuthorContact;
 import ac.cr.una.backend.model.Book;
-import ac.cr.una.backend.service.AuthorServiceImpl;
 import ac.cr.una.backend.service.BookService;
 import ac.cr.una.backend.service.BookServiceImpl;
 import java.util.List;
@@ -37,9 +35,16 @@ public class BookWebService {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public BookWebService() {
     }
     
+    /**
+     *
+     * @return
+     */
     @DELETE
     @Path("/")
     public boolean deleteAll() {
@@ -52,6 +57,11 @@ public class BookWebService {
         return result;
     }
     
+    /**
+     *
+     * @param book
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -65,6 +75,10 @@ public class BookWebService {
         return book;
     }
     
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -78,6 +92,10 @@ public class BookWebService {
         return bookList;
     }
     
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)

@@ -18,6 +18,10 @@ public class BookTypeDAOImpl implements BookTypeDAO {
     
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
@@ -26,6 +30,11 @@ public class BookTypeDAOImpl implements BookTypeDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @param bookType
+     * @return
+     */
     @Override
     public BookType save(BookType bookType) {
         session.beginTransaction();
@@ -35,6 +44,11 @@ public class BookTypeDAOImpl implements BookTypeDAO {
         return bookType;
     }
 
+    /**
+     *
+     * @param type
+     * @return
+     */
     @Override
     public BookType findByType(String type) {
         BookType bookType = null;

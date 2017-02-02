@@ -16,5 +16,5 @@ public interface BookDAO {
     public boolean deleteAll();
     public Book save(Book book);
     public List<Book> findAll();
-    public float totalPriceAll();
+    
 }

@@ -18,6 +18,10 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
 
     private final Session session = HibernateUtil.getSessionFactory().openSession();
     
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
@@ -26,6 +30,11 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @param authorContact
+     * @return
+     */
     @Override
     public AuthorContact save(AuthorContact authorContact) {
         session.beginTransaction();
@@ -35,6 +44,10 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
         return authorContact;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<AuthorContact> findAll() {
         List<AuthorContact> authorContactList = new ArrayList<>();

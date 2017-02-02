@@ -18,6 +18,10 @@ public class BookDAOImpl implements BookDAO {
 
     private final Session session = HibernateUtil.getSessionFactory().openSession();
     
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
@@ -26,6 +30,11 @@ public class BookDAOImpl implements BookDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @param book
+     * @return
+     */
     @Override
     public Book save(Book book) {
         session.beginTransaction();
@@ -35,6 +44,10 @@ public class BookDAOImpl implements BookDAO {
         return book;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Book> findAll() {
         List<Book> bookList = new ArrayList();
@@ -43,20 +56,5 @@ public class BookDAOImpl implements BookDAO {
 
         return bookList;
     }
-
-    @Override
-    public float totalPriceAll() {
-        float totalPrice=0;
-        List<Book> bookList= new ArrayList<>();
-        
-        bookList= session.createCriteria(Book.class).list();
-        
-        for(Book book: bookList){
-            totalPrice= totalPrice + book.getPrice();
-        }
-        
-        return totalPrice;
-    }
-    
-    
+   
 }

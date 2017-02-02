@@ -24,7 +24,7 @@ Universidad Nacional de Costa Rica, Prof: Maikol Guzman Alan.
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-    <display-name>UNA Restful Web Application</display-name>
+    <display-name>ExamenParcial2</display-name>
 
     <servlet>
         <servlet-name>jersey-serlvet</servlet-name>

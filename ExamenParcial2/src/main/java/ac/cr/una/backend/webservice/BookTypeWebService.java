@@ -36,9 +36,17 @@ public class BookTypeWebService {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public BookTypeWebService() {
     }
     
+    /**
+     *
+     * @param type
+     * @return
+     */
     @GET
     @Path("/{type}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -52,6 +60,10 @@ public class BookTypeWebService {
         return bookType;
     }
     
+    /**
+     *
+     * @return
+     */
     @DELETE
     @Path("/")
     public boolean deleteAll() {
@@ -64,7 +76,11 @@ public class BookTypeWebService {
         return result;
     }
     
-    
+    /**
+     *
+     * @param bookType
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
